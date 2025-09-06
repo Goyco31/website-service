@@ -1,44 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IC & G Cleaning Services</title>
+  <link rel="stylesheet" href="/css/paginaprincipal.css">
 </head>
 <body>
-    <!-- header -->
-    <div id="header"></div>
+  <!-- Header -->
+  <div id="header"></div>
 
-    <main>
-        <section class="hero">
-        <h2>What do we do?</h2>
-        <p>Since 2014, IC & G Cleaning Services has proudly served Broward County with reliable cleaning services...</p>
-        </section>
+  <main>
+    <!-- Sección Info -->
+    <section class="info-section">
+      <div class="info-image">
+        <img src="tu-imagen.png" alt="Imagen limpieza">
+      </div>
 
-        <section class="services">
-        <h2>Our Services</h2>
-        <div class="service-grid">
-            <div class="service">Building Cleaning</div>
-            <div class="service">Commercial Cleaning</div>
-            <div class="service">Construction Cleaning</div>
-            <div class="service">Warehouse Cleaning</div>
-            <div class="service">Pressure Cleaner</div>
-            <div class="service">Porter</div>
+      <div class="info-text">
+        <div class="info-card">
+          <div class="icon">🤝</div>
+          <div>
+            <h3>Why choose us?</h3>
+            <p>We are a professional and reliable company that will be always seeking 
+            for the customer satisfaction offering the most transparent and eco friendly services.</p>
+          </div>
         </div>
-        </section>
-    </main>
 
-    <!-- Footer -->
-    <div id="footer"></div>
-    
-    <script>
-        // Cargar header y footer
-        fetch("header.html").then(res => res.text()).then(data => {
-        document.getElementById("header").innerHTML = data;
-        });
-        fetch("footer.html").then(res => res.text()).then(data => {
-        document.getElementById("footer").innerHTML = data;
-        });
-    </script>
+        <div class="info-card">
+          <div class="icon">✨</div>
+          <div>
+            <h3>Why are we different?</h3>
+            <p>We offer a personalized service and flexibility on schedule that fits your time, 
+            we also offer a reliable and trusted service.</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="icon">🏢</div>
+          <div>
+            <h3>In what we specialize in?</h3>
+            <p>Commercial, Industrial and Warehouse cleaning, is our specialty because our experience 
+            and highly trained staff.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Hero -->
+    <section class="hero">
+      <h2>What do we do?</h2>
+      <p>Since 2014, IC & G Cleaning Services has proudly served Broward County with reliable building, commercial, and post-construction cleaning. Our Eco-friendly methods ensure spotless results and a healthier environment.</p>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section class="services">
+      <h2>Our Services</h2>
+      <div class="service-grid">
+        <div class="service">Building Cleaning</div>
+        <div class="service">Commercial Cleaning</div>
+        <div class="service">Construction Cleaning</div>
+        <div class="service">Warehouse Cleaning</div>
+        <div class="service">Pressure Cleaner</div>
+        <div class="service">Porter</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+  
+  <script>
+    // Cargar header y footer
+    fetch("header.html").then(res => res.text()).then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+    fetch("footer.html").then(res => res.text()).then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+  </script>
 </body>
 </html>
