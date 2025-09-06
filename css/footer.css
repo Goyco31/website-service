@@ -1,8 +1,21 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'poppins', 'sans-serif';
+  box-sizing: border-box;
+}
+body {
+  background: #3b77e6;
+} 
 .main-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: #3b77e6;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  background-color: #ffffff;
+  background-color: #000000;
   color: rgb(49, 19, 216);
   padding: 30px 50px;
 }
