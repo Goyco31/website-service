@@ -15,6 +15,10 @@ body {
 main {
   padding: 20px;
 }
+main .hero {
+  margin-left: -20px;
+  margin-right: -20px;
+}
 
 /* ===== ESTILOS DE LA SECCIÓN INFO ===== */
 .info-section {
@@ -96,25 +100,52 @@ main {
 
 /* ===== ESTILOS DE LA SECCIÓN HERO ===== */
 .hero {
+  position: relative; /* 👈 IMPORTANTE para pseudo-elementos */
   text-align: center;
   padding: 60px 20px;
-  background: linear-gradient(135deg, #1E90FF 0%, #0066CC 100%);
-  color: white;
+  background: linear-gradient(135deg, #1E90FF 35%, #83C201 65%);
+  color: rgb(0, 0, 0);
   margin: 40px 0;
+  overflow: hidden; /* evita que pseudo-elementos se salgan */
 }
 
-.hero h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  font-weight: bold;
+/* Sombreado en la parte superior */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px; /* 👈 dale más altura para que se note */
+  background: linear-gradient(to bottom, 
+              rgba(0, 0, 0, 0.25) 0%, 
+              rgba(0, 0, 0, 0.1) 70%, 
+              transparent 100%);
+  z-index: 1;
 }
 
+/* Efecto de profundidad adicional */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at top center, 
+              rgba(255, 255, 255, 0.2) 0%, 
+              rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Asegura que el texto esté encima */
+.hero h2, 
 .hero p {
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 18px;
-  line-height: 1.6;
+  position: relative;
+  z-index: 2;
 }
+
 
 /* ===== ESTILOS DE LA SECCIÓN SERVICIOS ===== */
 .services {
@@ -133,7 +164,7 @@ main {
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
