@@ -1,0 +1,56 @@
+.info-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 60px 80px;
+  flex-wrap: wrap;
+}
+
+.info-image img {
+  width: 400px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(74,144,226,0.6); /* brillo azul */
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 500px;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  background: #4a90e2;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  gap: 15px;
+}
+
+.info-card .icon {
+  background: #c6ff00;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 10px;
+  min-width: 40px;
+  text-align: center;
+}
+
+.info-card h3 {
+  margin: 0 0 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.info-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
