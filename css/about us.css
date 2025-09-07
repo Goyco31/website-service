@@ -1,7 +1,7 @@
 .title h1{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
-    font-size: 60px;
+    font-size: 100px;
 }
 .layout { 
   display: grid; /* Imagen a la izquierda y texto a la derecha*/

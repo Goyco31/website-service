@@ -141,7 +141,11 @@ main .hero {
 }
 
 /* Asegura que el texto esté encima */
-.hero h2, 
+.hero h2{
+  margin-bottom: 40px;
+  font-size: 40px;
+}
+
 .hero p {
   position: relative;
   z-index: 2;
@@ -161,6 +165,12 @@ main .hero {
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   overflow: hidden; /* hace que la img respete el borde redondeado */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services-title{
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 50px ;
 }
 
 .service img {
