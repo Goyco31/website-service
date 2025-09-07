@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <link rel="stylesheet" href="/css/our services.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+
+        <div class="titulo">
+            <h1>Our Services</h1>
+        </div>
+    <div class="layout">
+
+        <div class="commercial">
+            <h4>Commercial Cleaning</h4>
+        </div>
+        <img src="/images/imagen 17.jpg" alt="commercial image">
+
+    </div>        
+    <div class="layout">
+
+        <div class="building title">
+            <h4>Building Cleaning</h4>
+        </div>
+        <img src="/images/imagen 1.jpg" alt="building image">
+
+    </div>
+    <div class="layout">
+
+        <div class="construction title">
+            <h4>Construction Cleaning</h4>
+        </div>
+        <img src="/images/imagen 10.jpg" alt="construction image">
+
+    </div>
+    <div class="layout">
+
+        <div class="warehouse title">
+            <h4>Warehouse Cleaning</h4>
+        </div>
+        <img src="/images/imagen 11.jpg" alt="warehouse image">
+
+    </div>    
+
+
+    <!--Footer-->
+    <div id="footer"></div>
+    <script>
+    // Cargar header y footer
+    fetch("header.html").then(res => res.text()).then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+    fetch("footer.html").then(res => res.text()).then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+  </script>
+</body>
+</html>

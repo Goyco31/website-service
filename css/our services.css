@@ -1,0 +1,14 @@
+.layout{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: top;
+    padding: 40px 60px;
+    border-bottom: 2px solid #0527bd;
+}
+.layout:nth-child(odd){
+    flex-direction: row-reverse;
+}
+.layout img{
+    width: 200px;
+    height: 200px;
+}
