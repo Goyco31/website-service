@@ -1,0 +1,34 @@
+.title h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-size: 60px;
+}
+.layout { 
+  display: grid; /* Imagen a la izquierda y texto a la derecha*/
+  grid-template-columns: auto 1fr;
+  column-gap: 50px;
+  align-items: start; 
+  margin-right: 40px;
+}
+
+.imagen{
+  width: 500px; 
+  height: 500px;
+  object-fit: cover;
+  border-radius: 5%;
+  margin-left: 45px;
+  margin-bottom: 100px;
+  box-shadow: 0 5px 30px 30px #588DFF;
+}
+.description{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    margin-top: 85px;
+}
+/* Responsive: apila en móviles */
+@media (max-width: 600px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+

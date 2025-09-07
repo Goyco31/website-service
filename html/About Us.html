@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="stylesheet" href="/css/about us.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- TItulo -->
+    <div class="title">
+        <h1><span style="color: #0F4FAA;">About</span> <span style="color: #8EC900;">Us</span></h1>
+    </div>
+    <!-- Imagen -->
+    <div class="layout">
+        <img src="/images/imagen 4.jpg" class="imagen">
+    <!-- Descripcion -->
+        <div class="description">
+            <p>
+            <span style="color: #0F4CA5"> & G are the initials of our names, Ileana Caceres and Guillermo, a Cuban-Argentinian couple that moved to the United States to entrepreneur. <br><br>
+            This project means a lot for us and since the date of creation we have fully committed to this company, ensuring that every single one of our customers is satisfied whenever our service is delivered, and as today we have served more than 1K services among Broward county; we encourage our staff to deliver the best quality and detail possible in every single job they do as we believe in the philosophy of satisfying the customer above everything<br><br>
+            IC & G Cleaning services is a certified company in the county of Broward in Florida with more than 10 years of experience, We have always offered an excellent service.</span></p>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <div id="footer"></div>
+<script>
+    // Cargar header y footer
+    fetch("header.html").then(res => res.text()).then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+    fetch("footer.html").then(res => res.text()).then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+  </script>
+</body>
