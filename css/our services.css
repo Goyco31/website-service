@@ -61,3 +61,26 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
 }
+/* responsive */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;   /* Imagen y texto uno debajo del otro */
+    padding: 20px;
+    text-align: center;       /* Centrar texto */
+  }
+
+  .layout img {
+    width: 100%;              /* La imagen ocupa todo el ancho disponible */
+    height: auto;             /* Mantiene proporciones */
+    margin: 0 0 15px 0;       /* Espacio debajo de la imagen */
+  }
+
+  .layout h4 {
+    font-size: 18px;          /* Títulos más pequeños */
+  }
+
+  .layout .descripcion {
+    font-size: 14px;          /* Texto más cómodo de leer */
+    max-height: none;         /* Se ajusta al contenido */
+  }
+}
