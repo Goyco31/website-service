@@ -1,14 +1,63 @@
-.layout{
+.layout {
     display: flex;
-    justify-content:space-evenly;
-    align-items: top;
+    justify-content:flex-end;
+    align-items: center;
     padding: 40px 60px;
-    border-bottom: 2px solid #0527bd;
+    border-bottom: 2px solid #0F4CA5;
+    position:relative;
+    overflow:hidden;
+    cursor: default;
+    transition:all 0.7s ease;
 }
+/*distribuye de izquierda a derecha*/
 .layout:nth-child(odd){
-    flex-direction: row-reverse;
+    flex-direction:row-reverse;
+}
+/*hace zoom*/
+.layout:hover{
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px #0F4CA5;
+    background-color: #b3cdf5;
 }
 .layout img{
-    width: 200px;
-    height: 200px;
+    width: 350px;
+    height: 350px;
+    margin: 30px ;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px -30px #000000;
+    transition: all 0.7 ease;
+}
+/*titulo*/
+.layout h4{
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px 0;
+    color: #333;
+    transition: all 0.7s ease;
+}
+/*descripcion*/
+.layout p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #333;
+    opacity: 1;
+    transition: all 0.7s ease, max-height 0.3 ease;
+}
+/*Hover*/
+.layout:hover p{
+    max-height: 200px ; /*permite expandirse*/
+}
+
+.building h4{
+    text-align: right;
+}
+.warehouse h4{
+    text-align: right;
+}
+/*Divisiones y organizacion de text*/
+
+.titulo{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
 }
