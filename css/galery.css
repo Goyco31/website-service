@@ -20,7 +20,7 @@
     align-items: center;
     justify-content: center;
     padding: 5%;
-    border: 10px solid #1153B5;
+    border: 0px solid #1153B5;
     border-radius: 50px;  /* redondeado visible */
     overflow: hidden; 
     margin-bottom: 50px;    /* evita cortes feos */
@@ -39,6 +39,7 @@
     object-fit: cover;
     border-radius: 20px;     /* lo quitamos */
     display: block;
+    box-shadow: 0px 13px 10px -10px;
 }
 .imagenes img:hover{
     transform: scale(1.05);
@@ -47,7 +48,7 @@
 }
 
 .galeria button {
-    background-color: none;
+    background-color: #eaffd4;
     color: #1153B5;
     border: none;
     padding: 10px 35px;
@@ -55,6 +56,7 @@
     border-radius: 100%;
     font-size: 60px;
     margin: 15px;
+    box-shadow: 0px 13px 10px -10px;
 }
 .galeria button:hover{
     transform: scale(1.05);
