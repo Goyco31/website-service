@@ -4,58 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galery</title>
+    <link rel="stylesheet" href="/css/galery.css">
 </head>
 <body>
     <!-- Header -->
     <div id="header"></div>
 
     <div class="titulo">
-        <h1>Galeria</h1>
+        <h1><span style="color: #1153B5;">Gall</span><span style="color:#63C601 ;">ery</span></h1>
     </div>
-    <div class="layout">
-        <h2>We will carefully clean your space top to bottom.
-Restoring the beauty and freshness of all your upholstered fabrics and take the work out of housework for you.</h2>
+    <div class="descripcion">
+        <h2>All of our work in <span style="font-weight: bolder;">one</span> place</h2>
     </div>
+
     <div class="galeria">
-        <img src="/images/imagen 1.jpg" class="1">
-   
-        <img src="/images/imagen 2.jpg" class="2">
-    
-        <img src="/images/imagen 3.jpg" class="3">
-   
-        <img src="/images/imagen 4.jpg" class="4">
-    
-        <img src="/images/imagen 5.jpg" class="5">
-    
-        <img src="/images/imagen 6.jpg" class="6">
-    
-        <img src="/images/imagen 7.jpg" class="7">
-   
-        <img src="/images/imagen 8.jpg" class="8">
-    
-        <img src="/images/imagen 9.jpg" class="9">
-    
-        <img src="/images/imagen 10.jpg" class="10">
-    
-        <img src="/images/imagen 11.jpg" class="11">
-    
-        <img src="/images/imagen 12.jpg" class="12">
-   
-        <img src="/images/imagen 13.jpg" class="13">
-   
-        <img src="/images/imagen 14.jpg" class="14">
-   
-        <img src="/images/imagen 15.jpg" class="15">
-   
-        <img src="/images/imagen 16.jpg" class="16">
-    
-        <img src="/images/imagen 17.jpg" class="17">
-    
-        <img src="/images/imagen 18.jpg" class="18">
-    
-        <img src="/images/imagen 19.jpg" class="19">
-    
-        <img src="/images/imagen 20.jpg" class="20">
+
+        <!-- boton posterior-->
+        <button class="anterior" onclick="cambiarFoto(-1)">&#10094;</button>
+
+        <div class="imagenes">
+            <img src="/images/imagen 1.jpg" id="foto1" alt="Galeria" onclick="abrirLightbox(this.src)">
+            <img src="/images/imagen 2.jpg" id="foto2" alt="Galeria" onclick="abrirLightbox(this.src)">
+            <img src="/images/imagen 3.jpg" id="foto3" alt="Galeria" onclick="abrirLightbox(this.src)">
+        </div>    
+
+        <!-- boton posterior-->
+        <button class="posterior" onclick="cambiarFoto(1)">&#10095;</button>
+
+    </div>
+    <!-- Lightbox -->
+    <div id="lightbox" onclick="cerrarLightbox()">
+        <img id="lightbox-img" src="" alt="Imagen ampliada">
     </div>
 
     <!--Footer-->
@@ -69,6 +48,48 @@ Restoring the beauty and freshness of all your upholstered fabrics and take the 
     fetch("footer.html").then(res => res.text()).then(data => {
       document.getElementById("footer").innerHTML = data;
     });
-  </script>
+
+    //galeria carrusel
+    const fotos = [
+    "/images/imagen 1.jpg",
+    "/images/imagen 2.jpg",
+    "/images/imagen 3.jpg",
+    "/images/imagen 4.jpg",
+    "/images/imagen 5.jpg",
+    "/images/imagen 6.jpg",
+    "/images/imagen 7.jpg",
+    "/images/imagen 8.jpg",
+    "/images/imagen 9.jpg",
+    "/images/imagen 10.jpg",
+    "/images/imagen 11.jpg",
+    "/images/imagen 12.jpg",
+    "/images/imagen 13.jpg",
+    "/images/imagen 14.jpg",
+    "/images/imagen 15.jpg",
+    "/images/imagen 16.jpg",
+    "/images/imagen 17.jpg",
+    "/images/imagen 18.jpg",
+    "/images/imagen 19.jpg",
+    "/images/imagen 20.jpg",
+  ];
+
+  let indice = 0;
+
+  function cambiarFoto(direccion) {
+    indice = (indice + direccion + fotos.length) % fotos.length;
+    document.getElementById("foto1").src = fotos[indice];
+    document.getElementById("foto2").src = fotos[(indice + 1) % fotos.length];
+    document.getElementById("foto3").src = fotos[(indice + 2) % fotos.length];
+}
+    //galeria abrir imagen
+    function abrirLightbox(src) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = src;
+}
+
+    function cerrarLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
+</script>
 </body>
 </html>
