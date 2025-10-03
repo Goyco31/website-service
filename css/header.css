@@ -21,29 +21,77 @@ main .hero {
 }
 
 .main-header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   padding: 10px 40px;
   background-color: #ffffff;
   box-shadow: 0 10px 20px rgba(5, 9, 235, 0.1);
+  position: relative;
+  gap: 40px;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 60px;
+  padding: 10px 20px;
+  z-index: 1001;
+  justify-self: start;
 }
 
 .logo img {
   height: 100px;
 }
 
+/* Botón hamburguesa (oculto por defecto) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  background-color: #0F4FAA;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+/* Animación del hamburguesa cuando está activo */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 60px;
+  gap: 50px;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li a {
@@ -52,6 +100,11 @@ main .hero {
   font-weight: 600;
   font-size: 25px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #174B8B;
 }
 
 .btn-call {
@@ -62,6 +115,139 @@ main .hero {
   border-radius: 6px;
   font-weight: bold;
   font-size: 20px;
-  margin-left: 40px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+.btn-call:hover {
+  background-color: #0F4FAA;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(15, 79, 170, 0.3);
+}
+
+/* ===== RESPONSIVE PARA TABLETS ===== */
+@media (max-width: 1024px) {
+  .main-header {
+    padding: 10px 20px;
+    grid-template-columns: auto 1fr auto;
+  }
+  
+  .logo {
+    padding: 10px;
+  }
+  
+  .logo img {
+    height: 80px;
+  }
+  
+  .nav-links {
+    gap: 25px;
+  }
+  
+  .nav-links li a {
+    font-size: 20px;
+  }
+  
+  .btn-call {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+}
+
+/* ===== RESPONSIVE PARA MÓVILES (HAMBURGUESA) ===== */
+@media (max-width: 768px) {
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: #ffffff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 20px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s ease;
+    z-index: 1000;
+  }
+  
+  .nav-menu.active {
+    right: 0;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+  }
+  
+  .nav-links li {
+    width: 100%;
+  }
+  
+  .nav-links li a {
+    font-size: 22px;
+    display: block;
+    padding: 10px 0;
+  }
+  
+  .btn-call {
+    margin-left: 0;
+    display: block;
+    text-align: center;
+    width: 100%;
+    max-width: 200px;
+    font-size: 18px;
+  }
+  
+  .logo {
+    padding: 5px 10px;
+    justify-self: start;
+  }
+  
+  .logo img {
+    height: 70px;
+  }
+}
+
+/* ===== RESPONSIVE PARA MÓVILES PEQUEÑOS ===== */
+@media (max-width: 480px) {
+  .main-header {
+    padding: 10px 15px;
+  }
+  
+  .logo img {
+    height: 60px;
+  }
+  
+  .nav-menu {
+    width: 80%;
+  }
+  
+  .nav-links li a {
+    font-size: 20px;
+  }
+  
+  .btn-call {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+  
+  .hamburger span {
+    width: 25px;
+  }
 }
