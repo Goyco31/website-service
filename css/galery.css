@@ -20,19 +20,23 @@ main .hero {
   margin-right: -20px;
 }
 
-/*Texto*/
-.titulo{
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 40px;
+/* ===== TEXTO ===== */
+.titulo {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 60px;
+  margin: 40px 0 20px;
 }
+
 .descripcion {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 60px;
-    color: #1153B5;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 60px;
+  color: #1153B5;
+  font-size: 28px;
 }
-/*Galeria*/
+
+/* ===== GALERIA ===== */
 .galeria {
   width: 95%;
   max-width: 1100px;
@@ -44,22 +48,23 @@ main .hero {
   border-radius: 40px;
   box-shadow: 0px 4px 24px rgba(0,0,0,0.09);
   position: relative;
+  margin-bottom: 80px;
 }
 
 .imagenes {
   display: flex;
-  flex-wrap: wrap;         /* allow wrapping on small screens */
+  flex-wrap: wrap;
   gap: 16px;
-  justify-content: center; /* center images in gallery */
+  justify-content: center;
   width: 100%;
 }
 
 .imagenes img {
-  flex: 1 1 220px;         /* images grow, ideal min width */
-  min-width: 180px;        /* minimum width per image */
-  max-width: 280px;        /* maximum width per image */
-  width: 100%;             /* fill available space */
-  height: 280px;            /* keep aspect ratio */
+  flex: 1 1 220px;
+  min-width: 180px;
+  max-width: 280px;
+  width: 100%;
+  height: 280px;
   object-fit: cover;
   border-radius: 20px;
   display: block;
@@ -67,26 +72,27 @@ main .hero {
   transition: transform 0.7s ease;
 }
 
-.imagenes img:hover{
-    transform: scale(1.05);
-    transition: all 0.7s ease;
-    cursor: pointer;
+.imagenes img:hover {
+  transform: scale(1.05);
+  transition: all 0.7s ease;
+  cursor: pointer;
 }
 
 .galeria button {
-    background-color: #eaece8;
-    color: #1153B5;
-    border: none;
-    padding: 10px 35px;
-    cursor: pointer;
-    border-radius: 100%;
-    font-size: 60px;
-    margin: auto;
-    box-shadow: 0px 13px 10px -10px;
+  background-color: #eaece8;
+  color: #1153B5;
+  border: none;
+  padding: 10px 35px;
+  cursor: pointer;
+  border-radius: 100%;
+  font-size: 60px;
+  margin: auto;
+  box-shadow: 0px 13px 10px -10px;
+  transition: all 0.3s ease;
 }
-.galeria button:hover{
-    transform: scale(1.05);
-    transition: all 0.3s ease;
+
+.galeria button:hover {
+  transform: scale(1.05);
 }
 
 .galeria .anterior,
@@ -94,11 +100,10 @@ main .hero {
   position: absolute;
   top: 0;
   bottom: 0;
-  margin: auto 0;   /* vertically center between top & bottom */
+  margin: auto 0;
   z-index: 2;
-  height: fit-content; /* ensures it takes only the arrow height */
+  height: fit-content;
 }
-
 
 .galeria .anterior {
   left: 10px;
@@ -108,6 +113,15 @@ main .hero {
   right: 10px;
 }
 
+/* ===== CONTACT US ===== */
+.callUs {
+  font-size: 60px;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 60px 0 40px;
+}
+
 .ContactUs {
   width: 100%;
   max-width: 1200px;
@@ -115,46 +129,42 @@ main .hero {
   grid-template-columns: repeat(3, 1fr);
   border-radius: 5%;
   margin: 0 auto 50px auto;
-  margin-bottom: 50px;
   text-align: center;
   padding: 5%;
+  gap: 30px;
   align-items: center;
   justify-items: center;
   font-family: Arial, Helvetica, sans-serif;
-  
 }
 
 .ContactUs p {
   width: 250px;
-  height: 250px;                /* fixed equal size (square) */
+  height: 250px;
   border: #1153B5 2px solid;
-  border-radius: 10%;             
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 30px 20px;              
-  box-sizing: border-box; 
-  transition:all 0.7s ease;  
-  text-align: center;    
+  padding: 30px 20px;
+  box-sizing: border-box;
+  transition: all 0.7s ease;
+  text-align: center;
 }
-.ContactUs p:hover{
+
+.ContactUs p:hover {
   transform: scale(1.05);
   box-shadow: 0 5px 10px #0F4CA5;
 }
 
-.callUs{
-  font-size: 60px;
-  justify-content: center;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center; 
-}
-
-
-/* Lightbox */
+/* ===== LIGHTBOX ===== */
 #lightbox {
-  display: none;               /* oculto por defecto */
+  display: none;
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0,0,0,0.8);
   justify-content: center;
   align-items: center;
@@ -166,58 +176,128 @@ main .hero {
   max-height: 90%;
   border-radius: 10px;
 }
-/* Responsive: tablet */
-@media (max-width: 900px) {
-  .imagenes img {
-    width: 45%;   /* 2 imágenes en fila */
+
+/* ===== RESPONSIVE TABLETS ===== */
+@media (max-width: 1024px) {
+  .titulo {
+    font-size: 60px;
+  }
+  
+  .descripcion {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+  
+  .callUs {
+    font-size: 50px;
   }
 }
 
-/* Responsive: móvil */
-@media (max-width: 900px) {
-  .galeria {
-    padding: 3vw;
-    border-radius: 30px;
+/* ===== RESPONSIVE MÓVILES ===== */
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 48px;
+    margin: 30px 0 15px;
   }
-  .imagenes img {
-    display: none;
+  
+  .descripcion {
+    font-size: 20px;
+    margin-bottom: 30px;
+    padding: 0 20px;
   }
-  .imagenes img:first-child {
-    display: block;
-    width: 100%;
-    max-width: 55vw;
-    height: auto;
-    margin: auto;
-  }
-
-@media (max-width: 600px) {
+  
   .galeria {
     width: 99%;
     padding: 4vw 1vw;
-    border-radius: 18px;
+    border-radius: 25px;
+    margin-bottom: 60px;
   }
+  
   .imagenes img {
     display: none;
   }
+  
   .imagenes img:first-child {
     display: block;
     width: 100%;
-    max-width: 55vw;
+    max-width: 65vw;
     height: auto;
     margin: auto;
   }
-}
-/* 📱 Responsive breakpoints */
-@media (max-width: 900px) {
+  
+  .galeria button {
+    font-size: 40px;
+    padding: 5px 20px;
+  }
+  
+  .galeria .anterior {
+    left: 5px;
+  }
+  
+  .galeria .posterior {
+    right: 5px;
+  }
+  
+  .callUs {
+    font-size: 42px;
+    margin: 50px 0 30px;
+  }
+  
   .ContactUs {
-    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
-    gap: 15px;
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 25px;
+  }
+  
+  .ContactUs p {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    min-height: 200px;
+    padding: 25px 15px;
   }
 }
 
-@media (max-width: 600px) {
-  .ContactUs {
-    grid-template-columns: 1fr; /* 1 per row on mobile */
+/* ===== RESPONSIVE MÓVILES PEQUEÑOS ===== */
+@media (max-width: 480px) {
+  .titulo {
+    font-size: 38px;
+    margin: 20px 0 10px;
   }
-}
+  
+  .descripcion {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+  
+  .galeria {
+    border-radius: 18px;
+    padding: 5vw 2vw;
+  }
+  
+  .imagenes img:first-child {
+    max-width: 75vw;
+  }
+  
+  .galeria button {
+    font-size: 30px;
+    padding: 3px 15px;
+  }
+  
+  .callUs {
+    font-size: 36px;
+    margin: 40px 0 25px;
+  }
+  
+  .ContactUs {
+    padding: 15px;
+    gap: 20px;
+  }
+  
+  .ContactUs p {
+    max-width: 280px;
+    min-height: 180px;
+    padding: 20px 12px;
+    font-size: 14px;
+  }
 }

@@ -21,68 +21,109 @@ main .hero {
 }
 
 
-.title h1{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
-    font-size: 100px;
+.title h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  font-size: 120px;
+  margin: 40px 0;
 }
+
 .layout { 
-  display: grid; /* Imagen a la izquierda y texto a la derecha*/
+  display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 50px;
   align-items: start; 
-  margin-right: 40px;
+  margin: 0 40px 100px 40px;
+  padding: 20px;
 }
 
-.imagen{
+.imagen {
   width: 500px; 
   height: 500px;
   object-fit: cover;
   border-radius: 5%;
   margin-left: 45px;
-  margin-bottom: 100px;
   box-shadow: 0 5px 30px 30px #588DFF;
 }
-.description{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
-    margin-top: 85px;
-}
-/* Responsive: apila en móviles */
-/* 📱 Tablets */
-@media (max-width: 992px) {
-  .layout {
-    grid-template-columns: 1fr; /* stack */
-    text-align: center;
-  }
 
+.description {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  margin-top: 85px;
+  line-height: 1.8;
+}
+
+/* ===== RESPONSIVE TABLETS ===== */
+@media (max-width: 1024px) {
+  .title h1 {
+    font-size: 70px;
+  }
+  
+  .layout {
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin: 0 20px 80px 20px;
+    gap: 30px;
+  }
+  
+  .imagen {
+    width: 100%;
+    max-width: 450px;
+    height: 450px;
+    margin: 0 auto;
+  }
+  
   .description {
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: left;
+  }
+}
+
+/* ===== RESPONSIVE MÓVILES ===== */
+@media (max-width: 768px) {
+  .title h1 {
+    font-size: 60px;
+    margin: 30px 0;
+  }
+  
+  .layout {
+    margin: 0 15px 60px 15px;
+    gap: 25px;
+  }
+  
+  .imagen {
+    max-width: 100%;
+    height: 350px;
+    box-shadow: 0 5px 20px 20px #588DFF;
+  }
+  
+  .description {
+    font-size: 16px;
     margin-top: 10px;
   }
 }
 
-/* 📱 Phones */
-@media (max-width: 600px) {
+/* ===== RESPONSIVE MÓVILES PEQUEÑOS ===== */
+@media (max-width: 480px) {
   .title h1 {
-    font-size: 4rem;
-    margin-bottom: 50px;
+    font-size: 48px;
+    margin: 20px 0;
   }
-
+  
   .layout {
-    grid-template-columns: 1fr;
+    margin: 0 10px 50px 10px;
     gap: 20px;
+    padding: 10px;
   }
-
+  
   .imagen {
-    max-width: 90%;
-    margin-bottom: 20px;
+    height: 280px;
+    box-shadow: 0 5px 15px 15px #588DFF;
   }
-
+  
   .description {
-    font-size: 1rem;
-    margin: 0 auto;
-    max-width: 90%;
+    font-size: 15px;
+    line-height: 1.6;
   }
 }
-
-

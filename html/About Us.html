@@ -28,13 +28,50 @@
 
     <!--Footer-->
     <div id="footer"></div>
-<script>
+  <script>
     // Cargar header y footer
     fetch("header.html").then(res => res.text()).then(data => {
       document.getElementById("header").innerHTML = data;
+      // Inicializar menú después de cargar el header
+      initHamburgerMenu();
     });
     fetch("footer.html").then(res => res.text()).then(data => {
       document.getElementById("footer").innerHTML = data;
     });
+
+    // Script para el menú hamburguesa
+    function initHamburgerMenu() {
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('navMenu');
+      
+      if (!hamburger || !navMenu) {
+        setTimeout(initHamburgerMenu, 100);
+        return;
+      }
+      
+      // Toggle del menú hamburguesa
+      hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+      
+      // Cerrar menú al hacer clic en un enlace
+      const navLinks = document.querySelectorAll('.nav-links a, .btn-call');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+      
+      // Cerrar menú al hacer clic fuera
+      document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+        }
+      });
+    }
   </script>
 </body>
