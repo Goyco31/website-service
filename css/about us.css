@@ -49,9 +49,40 @@ main .hero {
     margin-top: 85px;
 }
 /* Responsive: apila en móviles */
-@media (max-width: 600px) {
+/* 📱 Tablets */
+@media (max-width: 992px) {
   .layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* stack */
+    text-align: center;
+  }
+
+  .description {
+    margin-top: 10px;
   }
 }
+
+/* 📱 Phones */
+@media (max-width: 600px) {
+  .title h1 {
+    font-size: 4rem;
+    margin-bottom: 50px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .imagen {
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .description {
+    font-size: 1rem;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+}
+
 

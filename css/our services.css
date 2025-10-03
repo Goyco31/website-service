@@ -20,70 +20,84 @@ main .hero {
   margin-right: -20px;
 }
 
+/* ===== LAYOUT ===== */
 .layout {
-    display: flex;
-    justify-content:flex-end;
-    align-items: center;
-    padding: 40px 60px;
-    border-bottom: 2px solid #0F4CA5;
-    position:relative;
-    overflow:hidden;
-    cursor: default;
-    transition:all 0.7s ease;
-}
-/*distribuye de izquierda a derecha*/
-.layout:nth-child(odd){
-    flex-direction:row-reverse;
-}
-/*hace zoom*/
-.layout:hover{
-    transform: scale(1.05);
-    box-shadow: 0 15px 30px #0F4CA5;
-    background-color: #b3cdf5;
-}
-.layout img{
-    width: 350px;
-    height: 350px;
-    margin: 30px ;
-    border-radius: 10px;
-    box-shadow: 0 20px 40px -30px #000000;
-    transition: all 0.7 ease;
-}
-/*titulo*/
-.layout h4{
-    font-size: 35px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 10px 0;
-    color: #333;
-    transition: all 0.7s ease;
-}
-/*descripcion*/
-.layout p{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    color: #333;
-    opacity: 1;
-    transition: all 0.7s ease, max-height 0.3 ease;
-}
-/*Hover*/
-.layout:hover p{
-    max-height: 200px ; /*permite expandirse*/
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 40px 60px;
+  border-bottom: 2px solid #0F4CA5;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  transition: all 0.7s ease;
 }
 
-.building h4{
-    text-align: right;
+/* Alternate left/right */
+.layout:nth-child(odd) {
+  flex-direction: row-reverse;
 }
-.warehouse h4{
-    text-align: right;
-}
-/*Divisiones y organizacion de text*/
 
-.titulo{
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
+/* Hover zoom */
+.layout:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px #0F4CA5;
+  background-color: #b3cdf5;
 }
-/* boton */
+
+.layout img {
+  width: 350px;
+  height: 350px;
+  margin: 30px;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px -30px #000000;
+  transition: all 0.7s ease;
+
+  /* Force square and keep image coverage */
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* Titles */
+.layout h4 {
+  font-size: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 10px 0;
+  color: #333;
+  transition: all 0.7s ease;
+}
+
+/* Description */
+.layout p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: #333;
+  opacity: 1;
+  transition: all 0.7s ease, max-height 0.3s ease;
+  text-align: left;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+/* Hover reveal (desktop only) */
+.layout:hover p {
+  max-height: 200px;
+}
+
+/* Centered variations */
+.building h4,
+.warehouse h4 {
+  text-align: right;
+}
+
+/* Section title */
+.titulo {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+}
+
+/* Button */
 .boton {
   display: inline-block;
   margin-top: 15px;
@@ -92,19 +106,10 @@ main .hero {
   color: white !important;
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
-  text-decoration: none !important; /* quita subrayado */
+  text-decoration: none !important;
   border-radius: 6px;
   transition: background 0.3s ease, transform 0.2s ease;
   cursor: pointer;
-}
-
-/* Fuerza todos los estados del enlace */
-.boton:link,
-.boton:visited,
-.boton:hover,
-.boton:active {
-  color: white !important;
-  text-decoration: none !important;
 }
 
 .boton:hover {
@@ -116,26 +121,32 @@ main .hero {
   background-color: #061f3b;
   transform: scale(0.98);
 }
-/* responsive */
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .layout {
-    flex-direction: column;   /* Imagen y texto uno debajo del otro */
+    flex-direction: column !important; /* ✅ force vertical stack */
     padding: 20px;
-    text-align: center;       /* Centrar texto */
+    text-align: center;
   }
 
   .layout img {
-    width: 100%;              /* La imagen ocupa todo el ancho disponible */
-    height: auto;             /* Mantiene proporciones */
-    margin: 0 0 15px 0;       /* Espacio debajo de la imagen */
+    max-width: 100%;  /* full width on mobile */
+    margin: 0 0 15px 0;
   }
 
   .layout h4 {
-    font-size: 18px;          /* Títulos más pequeños */
+    font-size: 22px;
+    text-align: center !important;
   }
 
-  .layout .descripcion {
-    font-size: 14px;          /* Texto más cómodo de leer */
-    max-height: none;         /* Se ajusta al contenido */
+  .layout p {
+    font-size: 16px;
+    max-height: none;  /* ✅ text fully visible */
+    margin: 0 auto;
+    text-align: center;
+  }
+  .boton{
+    margin-bottom: 10px;
   }
 }

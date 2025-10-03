@@ -34,35 +34,39 @@ main .hero {
 }
 /*Galeria*/
 .galeria {
-    position: relative;
-    width: 80%;
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5%;
-    border: 0px solid #1153B5;
-    border-radius: 50px;  /* redondeado visible */
-    overflow: hidden; 
-    margin-bottom: 50px;    /* evita cortes feos */
+  width: 95%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 40px;
+  box-shadow: 0px 4px 24px rgba(0,0,0,0.09);
+  position: relative;
 }
 
 .imagenes {
-    display: flex;
-    gap: 30px;
-    flex-shrink: 0;  
-    flex-wrap: nowrap;     /* evita que se deforme */
+  display: flex;
+  flex-wrap: wrap;         /* allow wrapping on small screens */
+  gap: 16px;
+  justify-content: center; /* center images in gallery */
+  width: 100%;
 }
 
 .imagenes img {
-    width: 250px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 20px;     /* lo quitamos */
-    display: block;
-    box-shadow: 0px 13px 10px -10px;
+  flex: 1 1 220px;         /* images grow, ideal min width */
+  min-width: 180px;        /* minimum width per image */
+  max-width: 280px;        /* maximum width per image */
+  width: 100%;             /* fill available space */
+  height: 280px;            /* keep aspect ratio */
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+  box-shadow: 0px 13px 10px -10px rgba(0,0,0,0.10);
+  transition: transform 0.7s ease;
 }
+
 .imagenes img:hover{
     transform: scale(1.05);
     transition: all 0.7s ease;
@@ -84,6 +88,17 @@ main .hero {
     transform: scale(1.05);
     transition: all 0.3s ease;
 }
+
+.galeria .anterior,
+.galeria .posterior {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;   /* vertically center between top & bottom */
+  z-index: 2;
+  height: fit-content; /* ensures it takes only the arrow height */
+}
+
 
 .galeria .anterior {
   left: 10px;
@@ -159,18 +174,44 @@ main .hero {
 }
 
 /* Responsive: móvil */
-@media (max-width: 600px) {
-  .imagenes img {
-    width: 90%;   /* 1 imagen en fila */
-  }
+@media (max-width: 900px) {
   .galeria {
-    padding: 5%;
+    padding: 3vw;
+    border-radius: 30px;
+  }
+  .imagenes img {
+    display: none;
+  }
+  .imagenes img:first-child {
+    display: block;
+    width: 100%;
+    max-width: 55vw;
+    height: auto;
+    margin: auto;
+  }
+
+@media (max-width: 600px) {
+  .galeria {
+    width: 99%;
+    padding: 4vw 1vw;
+    border-radius: 18px;
+  }
+  .imagenes img {
+    display: none;
+  }
+  .imagenes img:first-child {
+    display: block;
+    width: 100%;
+    max-width: 55vw;
+    height: auto;
+    margin: auto;
   }
 }
 /* 📱 Responsive breakpoints */
 @media (max-width: 900px) {
   .ContactUs {
     grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+    gap: 15px;
   }
 }
 
@@ -178,4 +219,5 @@ main .hero {
   .ContactUs {
     grid-template-columns: 1fr; /* 1 per row on mobile */
   }
+}
 }
